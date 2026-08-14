@@ -42,6 +42,24 @@ echo "==> PyInstaller 打包 ..."
 rm -rf build
 rm -f PiggyMeadow.spec
 
+# 6. 创建 desktop 文件
+echo "==> 创建 desktop 文件 ..."
+cat > dist/PiggyMeadow.desktop << 'EOF'
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Piggy Meadow
+Comment=A simple clock demo with pigs
+Exec=$(pwd)/dist/PiggyMeadow
+Icon=$(pwd)/processed/icon.png
+Terminal=false
+Categories=Game;Utility;
+Keywords=pig;clock;demo;fun
+EOF
+
+chmod +x dist/PiggyMeadow.desktop
+
 echo ""
 echo "构建完成: $(pwd)/dist/PiggyMeadow"
 ls -lh dist/PiggyMeadow | awk '{print "  大小: " $5}'
+echo "  desktop 文件: $(pwd)/dist/PiggyMeadow.desktop"
