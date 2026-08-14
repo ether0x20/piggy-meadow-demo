@@ -20,6 +20,11 @@ def _load(rel_path):
     return pygame.image.load(str(PROCESSED / rel_path)).convert_alpha()
 
 
+def load_icon():
+    """窗口/任务栏图标 (运行时, PyInstaller --icon 只影响 exe 文件图标)。"""
+    return pygame.image.load(str(PROCESSED / "icon.png"))
+
+
 def load_assets():
     meta = json.loads((PROCESSED / "sprites.json").read_text(encoding="utf-8"))
 

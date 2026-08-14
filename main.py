@@ -2,7 +2,7 @@
 
 import pygame
 
-from src.assets import load_assets
+from src.assets import load_assets, load_icon
 from src.clock import Clock
 from src.config import SCREEN_W, SCREEN_H, MAX_PIGS
 from src.lightning import Lightning
@@ -12,6 +12,7 @@ from src.scene import Scene
 
 def main():
     pygame.init()
+    pygame.display.set_icon(load_icon())
     screen = pygame.display.set_mode((SCREEN_W, SCREEN_H))
     pygame.display.set_caption("Piggy Meadow")
     fps = pygame.time.Clock()
