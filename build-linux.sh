@@ -44,14 +44,15 @@ rm -f PiggyMeadow.spec
 
 # 6. 创建 desktop 文件
 echo "==> 创建 desktop 文件 ..."
-cat > dist/PiggyMeadow.desktop << 'EOF'
+ABS_PATH="$(pwd)"
+cat > dist/PiggyMeadow.desktop << EOF
 [Desktop Entry]
 Version=1.0
 Type=Application
 Name=Piggy Meadow
 Comment=A simple clock demo with pigs
-Exec=$(pwd)/dist/PiggyMeadow
-Icon=$(pwd)/processed/icon.png
+Exec=${ABS_PATH}/dist/PiggyMeadow
+Icon=${ABS_PATH}/processed/icon.png
 Terminal=false
 Categories=Game;Utility;
 Keywords=pig;clock;demo;fun
