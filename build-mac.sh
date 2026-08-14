@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
-# 构建脚本 — 在 Linux 上打包 Piggy Meadow 为独立可执行文件。
+# 构建脚本 — 在 macOS 上打包 Piggy Meadow 为 .app 应用。
 #
-# 产物: dist/PiggyMeadow (通用 Linux x86-64 ELF, 无需安装 Python)
+# 产物: dist/PiggyMeadow.app (独立应用, 无需安装 Python)
 #
-# 用法: ./build-linux.sh
+# 用法: ./build-mac.sh
+#
+# 注意: 可选图标 processed/icon.icns (macOS 应用图标格式),
+#       若不存在则跳过图标, 不影响构建。
 
 set -euo pipefail
 
@@ -26,22 +29,23 @@ fi
 echo "==> 安装依赖 (pygame / Pillow / PyInstaller) ..."
 ./venv/bin/pip install --quiet pygame Pillow pyinstaller
 
-# 3. 处理资源 (生成 processed/ 目录)
-#echo "==> 处理资源 ..."
-#./venv/bin/python process_assets.py >/dev/null
+# 3. 打包 (macOS 图标需 .icns 格式, 缺失则跳过)
+ICON_ARG=""
+if [ -f "processed/icon.icns" ]; then
+    ICON_ARG="--icon=processed/icon.icns"
+fi
 
-# 4. 打包
 echo "==> PyInstaller 打包 ..."
 ./venv/bin/pyinstaller --onefile --windowed \
-    --icon=./processed/icon.ico \
+    $ICON_ARG \
     --name PiggyMeadow \
     --add-data "processed:processed" \
     main.py >/dev/null 2>&1
 
-# 5. 清理中间产物
+# 4. 清理中间产物
 rm -rf build
 rm -f PiggyMeadow.spec
 
 echo ""
-echo "构建完成: $(pwd)/dist/PiggyMeadow"
-ls -lh dist/PiggyMeadow | awk '{print "  大小: " $5}'
+echo "构建完成: $(pwd)/dist/PiggyMeadow.app"
+du -sh dist/PiggyMeadow.app | awk '{print "  大小: " $1}'

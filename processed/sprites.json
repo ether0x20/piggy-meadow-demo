@@ -1,0 +1,142 @@
+{
+  "pig": {
+    "walk": {
+      "left": [
+        {
+          "file": "pig/walk_left_0.png",
+          "w": 55,
+          "h": 30,
+          "offset_x": -30,
+          "offset_y": -29
+        },
+        {
+          "file": "pig/walk_left_1.png",
+          "w": 55,
+          "h": 30,
+          "offset_x": -30,
+          "offset_y": -29
+        },
+        {
+          "file": "pig/walk_left_2.png",
+          "w": 55,
+          "h": 30,
+          "offset_x": -30,
+          "offset_y": -29
+        },
+        {
+          "file": "pig/walk_left_3.png",
+          "w": 55,
+          "h": 30,
+          "offset_x": -30,
+          "offset_y": -29
+        }
+      ],
+      "right": [
+        {
+          "file": "pig/walk_right_0.png",
+          "w": 55,
+          "h": 30,
+          "offset_x": -25,
+          "offset_y": -29
+        },
+        {
+          "file": "pig/walk_right_1.png",
+          "w": 55,
+          "h": 30,
+          "offset_x": -25,
+          "offset_y": -29
+        },
+        {
+          "file": "pig/walk_right_2.png",
+          "w": 55,
+          "h": 30,
+          "offset_x": -25,
+          "offset_y": -29
+        },
+        {
+          "file": "pig/walk_right_3.png",
+          "w": 55,
+          "h": 30,
+          "offset_x": -25,
+          "offset_y": -29
+        }
+      ]
+    },
+    "eat": {
+      "left": [
+        {
+          "file": "pig/eat_left_0.png",
+          "w": 55,
+          "h": 30,
+          "offset_x": -30,
+          "offset_y": -29
+        },
+        {
+          "file": "pig/eat_left_1.png",
+          "w": 56,
+          "h": 30,
+          "offset_x": -31,
+          "offset_y": -29
+        },
+        {
+          "file": "pig/eat_left_2.png",
+          "w": 57,
+          "h": 30,
+          "offset_x": -32,
+          "offset_y": -29
+        },
+        {
+          "file": "pig/eat_left_3.png",
+          "w": 57,
+          "h": 30,
+          "offset_x": -32,
+          "offset_y": -29
+        }
+      ],
+      "right": [
+        {
+          "file": "pig/eat_right_0.png",
+          "w": 55,
+          "h": 30,
+          "offset_x": -25,
+          "offset_y": -29
+        },
+        {
+          "file": "pig/eat_right_1.png",
+          "w": 56,
+          "h": 30,
+          "offset_x": -25,
+          "offset_y": -29
+        },
+        {
+          "file": "pig/eat_right_2.png",
+          "w": 57,
+          "h": 30,
+          "offset_x": -25,
+          "offset_y": -29
+        },
+        {
+          "file": "pig/eat_right_3.png",
+          "w": 57,
+          "h": 30,
+          "offset_x": -25,
+          "offset_y": -29
+        }
+      ]
+    }
+  },
+  "scenery": {
+    "tree": {
+      "file": "scenery/tree.png",
+      "w": 111,
+      "h": 160
+    }
+  },
+  "background_key_color": [
+    101,
+    141,
+    65
+  ],
+  "cell_size": 128,
+  "anchor_x": 64
+}
